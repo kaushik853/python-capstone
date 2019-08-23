@@ -6,22 +6,7 @@ from collections import Counter
 from datetime import datetime
 
 
-# fetch the secrets from our virtual environment variables
-CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
-CONSUMER_SECRET = os.environ['TWITTER_CONSUMER_SECRET']
-ACCESS_TOKEN = os.environ['TWITTER_ACCESS_TOKEN']
-ACCESS_SECRET = os.environ['TWITTER_ACCESS_SECRET']
-# authenticate to the service we're accessing
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 
-# create the connection
-api = tweepy.API(auth, wait_on_rate_limit=True,
-    wait_on_rate_limit_notify=True)
-tweets = tweepy.Cursor(api.search,
-         q="python",
-         lang="en",
-         since=2019-8-16).items(20)
 
 
 
@@ -154,17 +139,36 @@ def tweet_hour_max(tweets):
 
 
 
+def run():
+    # fetch the secrets from our virtual environment variables
+    CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
+    CONSUMER_SECRET = os.environ['TWITTER_CONSUMER_SECRET']
+    ACCESS_TOKEN = os.environ['TWITTER_ACCESS_TOKEN']
+    ACCESS_SECRET = os.environ['TWITTER_ACCESS_SECRET']
+    # authenticate to the service we're accessing
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+
+    # create the connection
+    api = tweepy.API(auth, wait_on_rate_limit=True,
+        wait_on_rate_limit_notify=True)
+    tweets = tweepy.Cursor(api.search,
+             q="python",
+             lang="en",
+             since=2019-8-16).items(20)
+    tweet_list = tweet_text(tweets)
+
 
 
 
 def main():
     print(f"Average number of followers of one user is {avg_num_followers(tweets)}")
-    tweet_list = tweet_text(tweets)
     print(f"Average length of words of each tweet is {avg_len_words(tweet_list)}")
 
 
 
 if __name__ == "__main__":
+    run()
     main()
 
 
