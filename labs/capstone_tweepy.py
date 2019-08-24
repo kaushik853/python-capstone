@@ -63,9 +63,7 @@ def tweet_common_words(tweet_list):
         for word in words:
             words_list.append(word.lower())
     counts = Counter(words_list).most_common(10)
-    most_common = {}
-    for x, y in counts:
-        most_common[x]=y
+    most_common = dict(counts)
     return most_common
 
 
@@ -78,9 +76,7 @@ def tweet_common_symbols(tweet_list):
                 if char.isalpha() == False and char.isdigit() == False:
                     sym_list.append(char)
     counts = Counter(sym_list).most_common(10)
-    most_common = {}
-    for x, y in counts:
-        most_common[x]=y
+    most_common = dict(counts)
     return most_common
 
 
@@ -135,7 +131,8 @@ def tweet_hour_max(tweets):
     for tweet in tweets:
         create_time.append(tweet.created_at.strftime('%H'))
     counts = Counter(create_time).most_common(1)
-    return counts
+    count = dict(counts)
+    return count
 
 
 
