@@ -93,7 +93,7 @@ def tweet_with_punctuation(tweet_list):
             tweet_punc+=1
     return (tweet_punc/len(tweet_list))*100
 
-def tweet_longest_word(tweets_listener):
+def tweet_longest_word(tweet_list):
     i = 1
     k = {}
     for tweet in tweet_list:
@@ -139,7 +139,7 @@ def tweet_hour_max(tweets):
 
 
 
-def run():
+def main():
     # fetch the secrets from our virtual environment variables
     CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
     CONSUMER_SECRET = os.environ['TWITTER_CONSUMER_SECRET']
@@ -152,23 +152,33 @@ def run():
     # create the connection
     api = tweepy.API(auth, wait_on_rate_limit=True,
         wait_on_rate_limit_notify=True)
-    tweets = tweepy.Cursor(api.search,
+    tweets = [item for item in tweepy.Cursor(api.search,
              q="python",
              lang="en",
-             since=2019-8-16).items(20)
+             since=2019-8-16).items(20)]
     tweet_list = tweet_text(tweets)
 
-
-
-
-def main():
     print(f"Average number of followers of one user is {avg_num_followers(tweets)}")
     print(f"Average length of words of each tweet is {avg_len_words(tweet_list)}")
+    print(f"Average length of character of each tweet is {avg_len_char(tweet_list)}")
+    print(f"{tweet_with_hash(tweet_list)} percentage of tweets with hash")
+    print(f"{tweet_with_mention(tweet_list)}percentage of tweets with mention")
+    print(f"10 Most common words are: \n {tweet_common_words(tweet_list)}")
+    print(f"10 Most common symbols are: \n{tweet_common_symbols(tweet_list)}")
+    print(f"{tweet_with_punctuation(tweet_list)} percentage of tweets with punctuation")
+    print(f"Longest word in each tweet is {tweet_longest_word(tweet_list)}")
+    print(f"Shortest word in each tweet is{tweet_shortest_word(tweet_list)}")
+    print(f"User with the highest number of tweets is {tweet_user_max(tweets)}")
+    print(f"Average number of tweets from users are {avg_tweet_count(tweets)}")
+    print(f"Most common hour of tweet is {tweet_hour_max(tweets)}")
+
+
+
+
 
 
 
 if __name__ == "__main__":
-    run()
     main()
 
 
