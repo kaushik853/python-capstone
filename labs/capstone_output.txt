@@ -1,15 +1,15 @@
-Average number of followers of one user is 2221.8
-Average length of words of each tweet is 17.8
-Average length of character of each tweet is 115.25
-40.0 percentage of tweets with hash
-100.0percentage of tweets with mention
+Average number of followers of one user is 6113.95
+Average length of words of each tweet is 18.6
+Average length of character of each tweet is 120.55
+65.0 percentage of tweets with hash
+85.0percentage of tweets with mention
 10 Most common words are: 
- {'rt': 15, 'and': 8, 'to': 7, 'the': 7, 'my': 5, 'in': 5, 'with': 4, '#python': 4, 'monty': 4, 'for': 4}
+ {'python': 17, 'rt': 16, '-': 10, 'using': 10, 'i': 8, 'for': 8, 'pyshark': 6, 'wrapper': 6, 'tshark,': 6, 'allowing': 6}
 10 Most common symbols are: 
-{'#': 48, ':': 30, '/': 27, '.': 24, '@': 22, '…': 15, ',': 8, "'": 5, '=': 4, '-': 3}
-95.0 percentage of tweets with punctuation
-Longest word in each tweet is {1: '#softwaredevelopment', 2: '@PortgasDLOEY', 3: 'https://t.co/PVBfYuBSSQ', 4: 'psychoanalyst', 5: '@AgentShishkin', 6: 'https://t.co/OPKkm0inrm', 7: '#MachineLearning', 8: '#MachineLearning', 9: 'https://t.co/iGpp…', 10: 'https://t.co/tX8vkllGBm', 11: '@AlokChoudhory', 12: '@JonTrevithick:', 13: 'https://t.co/iGpp…', 14: 'https://t.co/N2K7cJqPTw', 15: '@ploneconf:', 16: 'psychoanalyst', 17: 'https://t.co/frCnkOQ7Fv', 18: 'https://t.co/aYqLzvEUCv', 19: 'https://t.co/JmrpTNyaKa', 20: '#softwaredevelopment'}
-Shortest word in each tweet is{1: 'RT', 2: 'I', 3: '2', 4: 'RT', 5: ',', 6: 'RT', 7: 'RT', 8: 'RT', 9: '—', 10: 'RT', 11: 'I', 12: 'RT', 13: '—', 14: 'RT', 15: '📣', 16: 'RT', 17: 'RT', 18: 'to', 19: 'my', 20: 'RT'}
-User with the highest number of tweets is Rosenchild
-Average number of tweets from users are 65576.6
-Most common hour of tweet is [('06', 20)]
+{'/': 50, ':': 39, '#': 32, '@': 23, '.': 23, '…': 20, ',': 13, '_': 10, '-': 10, "'": 6}
+100.0 percentage of tweets with punctuation
+Longest word in each tweet is {1: '@VitalikButerin', 2: 'https://t.co/mH9fFH0fJq', 3: 'https://t.co/8yaK0A4TO9', 4: 'https://t.co/hVN88E9sn1', 5: 'https://t.co/hVN88E9sn1', 6: 'https://t.co/IDr6vYyHWb', 7: 'https://t.co/mH9fFH0fJq', 8: 'https://t.co/hVN88E9sn1', 9: 'https://t.co/8IGswlZGm6', 10: 'https://t.co/GQT4ggrxxi', 11: '@hachahoud:', 12: '@MalwareTechBlog:', 13: 'https://t.co/nQPdPg4f44', 14: 'https://t.co/GQT4ggrxxi', 15: '@hachahoud:', 16: '@hachahoud:', 17: '#MachineLearning', 18: 'https://t.co/E102mCmIED', 19: 'https://t.co/E102mCmIED', 20: 'https://t.co/E102mCmIED'}
+Shortest word in each tweet is{1: 'I', 2: 'RT', 3: 'RT', 4: 'RT', 5: 'RT', 6: 'I', 7: 'For', 8: 'RT', 9: '"RT', 10: 'RT', 11: 'I', 12: 'I', 13: 'R', 14: 'RT', 15: 'I', 16: 'I', 17: 'RT', 18: 'RT', 19: 'RT', 20: 'RT'}
+User with the highest number of tweets is GamerGeekNews
+Average number of tweets from users are 162386.5
+Most common hour of tweet is {'23': 20}

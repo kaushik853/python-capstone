@@ -94,6 +94,11 @@ def tweet_longest_word(tweet_list):
     k = {}
     for tweet in tweet_list:
         words = tweet.split()
+        words_list = []
+        for word in words:
+            for char in word:
+                if char.isalpha() == True:
+                    words_list.append(word)
         long_word = max(words, key=lambda s: len(s))
         #print(f"the tweet number {i} has longest word {long_word}")
         k[i] = long_word
@@ -105,7 +110,12 @@ def tweet_shortest_word(tweet_list):
     k = {}
     for tweet in tweet_list:
         words = tweet.split()
-        short_word = min(words, key=lambda s: len(s))
+        words_list = []
+        for word in words:
+            for char in word:
+                if char.isalpha() == True:
+                    words_list.append(word)
+        short_word = min(words_list, key=lambda s: len(s))
         k[i] = short_word
         i+=1
     return k
