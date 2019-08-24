@@ -1,0 +1,15 @@
+Average number of followers of one user is 2221.8
+Average length of words of each tweet is 17.8
+Average length of character of each tweet is 115.25
+40.0 percentage of tweets with hash
+100.0percentage of tweets with mention
+10 Most common words are: 
+ {'rt': 15, 'and': 8, 'to': 7, 'the': 7, 'my': 5, 'in': 5, 'with': 4, '#python': 4, 'monty': 4, 'for': 4}
+10 Most common symbols are: 
+{'#': 48, ':': 30, '/': 27, '.': 24, '@': 22, '…': 15, ',': 8, "'": 5, '=': 4, '-': 3}
+95.0 percentage of tweets with punctuation
+Longest word in each tweet is {1: '#softwaredevelopment', 2: '@PortgasDLOEY', 3: 'https://t.co/PVBfYuBSSQ', 4: 'psychoanalyst', 5: '@AgentShishkin', 6: 'https://t.co/OPKkm0inrm', 7: '#MachineLearning', 8: '#MachineLearning', 9: 'https://t.co/iGpp…', 10: 'https://t.co/tX8vkllGBm', 11: '@AlokChoudhory', 12: '@JonTrevithick:', 13: 'https://t.co/iGpp…', 14: 'https://t.co/N2K7cJqPTw', 15: '@ploneconf:', 16: 'psychoanalyst', 17: 'https://t.co/frCnkOQ7Fv', 18: 'https://t.co/aYqLzvEUCv', 19: 'https://t.co/JmrpTNyaKa', 20: '#softwaredevelopment'}
+Shortest word in each tweet is{1: 'RT', 2: 'I', 3: '2', 4: 'RT', 5: ',', 6: 'RT', 7: 'RT', 8: 'RT', 9: '—', 10: 'RT', 11: 'I', 12: 'RT', 13: '—', 14: 'RT', 15: '📣', 16: 'RT', 17: 'RT', 18: 'to', 19: 'my', 20: 'RT'}
+User with the highest number of tweets is Rosenchild
+Average number of tweets from users are 65576.6
+Most common hour of tweet is [('06', 20)]
