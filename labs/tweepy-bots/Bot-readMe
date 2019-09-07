@@ -1,0 +1,1 @@
+This bot uses the previously introduced Tweepy stream to actively watch for tweets that contain certain keywords. For each tweet, if you’re not the tweet author, it will mark the tweet as Liked and then retweet it.
