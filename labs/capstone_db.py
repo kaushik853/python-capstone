@@ -41,6 +41,7 @@ twitter_database = sqlalchemy.Table('twitter_data', metadata,
                             sqlalchemy.Column('tweet_count', sqlalchemy.Integer())
                     )
 twitter_data_results = sqlalchemy.Table('twitter_results', metadata,
+                            sqlalchemy.Column('keyword_search', sqlalchemy.String(255)),
                             sqlalchemy.Column('avg_num_followers', sqlalchemy.Float()),
                             sqlalchemy.Column('avg_tweet_length_word', sqlalchemy.Float()),
                             sqlalchemy.Column('avg_tweet_length_char', sqlalchemy.Float()),
@@ -123,7 +124,7 @@ max_h_db = tweet_hour_max(response_hour)
 
 newTable2 = sqlalchemy.Table('twitter_results', metadata, autoload=True, autoload_with=engine)
 #query = sqlalchemy.insert(newTable2).values(avg_num_followers=num_follow_db, avg_tweet_length_word=len_words_db)
-query = sqlalchemy.insert(newTable2).values(avg_num_followers=num_follow_db, avg_tweet_length_word=len_words_db, avg_tweet_length_char=len_char_db, tweet_with_hash=with_h_db, tweet_with_mention=with_m_db, common_words=comm_words_db, common_symbol=comm_sym_db, tweet_with_punctuation=with_p_db, longest_word=long_word_db, shortest_word=short_word_db, user_max_tweets=status_count_db, avg_tweet_count=avg_t_db, tweet_hour=max_h_db)
+query = sqlalchemy.insert(newTable2).values(keyword_search='python', avg_num_followers=num_follow_db, avg_tweet_length_word=len_words_db, avg_tweet_length_char=len_char_db, tweet_with_hash=with_h_db, tweet_with_mention=with_m_db, common_words=comm_words_db, common_symbol=comm_sym_db, tweet_with_punctuation=with_p_db, longest_word=long_word_db, shortest_word=short_word_db, user_max_tweets=status_count_db, avg_tweet_count=avg_t_db, tweet_hour=max_h_db)
 #avg_tweet_length_char=len_char_db, tweet_with_hash=with_h_db, tweet_with_mention=with_m_db, 10_common_words=comm_words_db, 10_common_symbol=comm_sym_db, tweet_with_punctuation=with_p_db, longest_word=long_word_db, shortest_word=short_word_db, user_max_tweets=status_count_db, avg_tweet_count=avg_t_db, tweet_hour=max_h_db)
 
 result_proxy = connection.execute(query)

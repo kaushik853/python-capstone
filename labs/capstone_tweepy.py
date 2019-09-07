@@ -11,6 +11,13 @@ from datetime import datetime
 
 
 def avg_num_followers(tweets):
+    """
+    This counts the average number of followers  twitter users has who typed 'python' keyword
+    Args:
+        list of tweets with the tweet metadata
+    Returns:
+        float: average number of followers
+    """
     follower_list = []
     for i in tweets:
         follower_list.append(i.user.followers_count)
@@ -18,12 +25,26 @@ def avg_num_followers(tweets):
 
 
 def tweet_text(tweets):
+    """
+    This gives a list of tweets text
+    Args:
+        list of tweets with the tweet metadata
+    Returns:
+        list: text from each tweet
+    """
     tweet_text_list = []
     for tweet in tweets:
         tweet_text_list.append(tweet.text)
     return tweet_text_list
 
 def avg_len_words(tweet_list):
+    """
+    This gives average length of the words in tweets
+    Args:
+        list: text from each tweet
+    Returns:
+        float: average length
+    """
     tweet_words = []
     for text in tweet_list:
         words = text.split()
@@ -31,6 +52,13 @@ def avg_len_words(tweet_list):
     return sum(tweet_words) / len(tweet_words)
 
 def avg_len_char(tweet_list):
+    """
+    This gives average length of the characters in tweets
+    Args:
+        list: text from each tweet
+    Returns:
+        float: average length
+    """
     tweet_words = []
     tweet_character = []
     for tweet in tweet_list:
@@ -41,6 +69,13 @@ def avg_len_char(tweet_list):
     return sum(tweet_character) / len(tweet_words)
 
 def tweet_with_hash(tweet_list):
+    """
+    This gives % of tweets with hash(#) in it
+    Args:
+        list: text from each tweet
+    Returns:
+        float: percentage
+    """
     tweet_hash = 0
     for tweet in tweet_list:
         if '#' in tweet:
@@ -48,6 +83,13 @@ def tweet_with_hash(tweet_list):
     return (tweet_hash/len(tweet_list))*100
 
 def tweet_with_mention(tweet_list):
+    """
+    This gives % of tweets with mentioning(@) other user
+    Args:
+        list: text from each tweet
+    Returns:
+        float: percentage
+    """
     tweet_men = 0
     for tweet in tweet_list:
         if '@' in tweet:
@@ -57,6 +99,13 @@ def tweet_with_mention(tweet_list):
 
 
 def tweet_common_words(tweet_list):
+    """
+    This gives 10 most common words in the tweets
+    Args:
+        list: text from each tweet
+    Returns:
+        dictionary: {word:occurance_count}
+    """
     words_list = []
     for tweet in tweet_list:
         words = tweet.split()
@@ -68,6 +117,13 @@ def tweet_common_words(tweet_list):
 
 
 def tweet_common_symbols(tweet_list):
+    """
+    This gives 10 most common symbols in the tweets
+    Args:
+        list: text from each tweet
+    Returns:
+        dictionary: {symbol: occurance_count}
+    """
     sym_list = []
     for tweet in tweet_list:
         words = tweet.split()
@@ -81,6 +137,13 @@ def tweet_common_symbols(tweet_list):
 
 
 def tweet_with_punctuation(tweet_list):
+    """
+    This gives % tweets with punctuation
+    Args:
+        list: text from each tweet
+    Returns:
+        float: percentage
+    """
     tweet_punc = 0
     punctuations = [',', ';', ':', '.', '!', '?', "'", '"', '_', '-', '/', '(', ')', '[', ']', '...', '*']
     for tweet in tweet_list:
@@ -90,6 +153,13 @@ def tweet_with_punctuation(tweet_list):
     return (tweet_punc/len(tweet_list))*100
 
 def tweet_longest_word(tweet_list):
+    """
+    This gives longest word in each tweet
+    Args:
+        list: text from each tweet
+    Returns:
+        dictionary: {tweet_count: word}
+    """
     i = 1
     k = {}
     for tweet in tweet_list:
@@ -106,6 +176,13 @@ def tweet_longest_word(tweet_list):
     return k
 
 def tweet_shortest_word(tweet_list):
+    """
+    This gives shortest word in each tweet
+    Args:
+        list: text from each tweet
+    Returns:
+        dictionary: {tweet_count: shortest}
+    """
     i = 1
     k = {}
     for tweet in tweet_list:
@@ -121,6 +198,13 @@ def tweet_shortest_word(tweet_list):
     return k
 
 def tweet_user_max(tweets):
+    """
+    This gives user with maximum tweets
+    Args:
+        list: list of tweets with the tweet metadata
+    Returns:
+        string: screen_name
+    """
     user_list = {}
     for tweet in tweets:
         user = tweet.user.screen_name
@@ -130,6 +214,13 @@ def tweet_user_max(tweets):
     return max_tweet_user
 
 def avg_tweet_count(tweets):
+    """
+    This gives average number of tweets by users
+    Args:
+        list: list of tweets with the tweet metadata
+    Returns:
+        float: number
+    """
     tweet_count = []
     for tweet in tweets:
         tweet_count.append(tweet.user.statuses_count)
@@ -137,6 +228,13 @@ def avg_tweet_count(tweets):
 
 
 def tweet_hour_max(tweets):
+    """
+    This gives the hour when users tweeted the most
+    Args:
+        list: list of tweets with the tweet metadata
+    Returns:
+        dictionary: {hour:count}
+    """
     create_time = []
     for tweet in tweets:
         create_time.append(tweet.created_at.strftime('%H'))
@@ -146,7 +244,7 @@ def tweet_hour_max(tweets):
 
 
 
-def main():
+def run():
     # fetch the secrets from our virtual environment variables
     CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
     CONSUMER_SECRET = os.environ['TWITTER_CONSUMER_SECRET']
@@ -186,7 +284,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run()
 
 
 
